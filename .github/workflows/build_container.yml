@@ -44,8 +44,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            hpm-883-course/lab-1-template-v2:latest
-            hpm-883-course/lab-1-template-v2:{{version}}
+            type=semver,pattern={{version}}
 
       - name: Build and push Docker image
         id: push
