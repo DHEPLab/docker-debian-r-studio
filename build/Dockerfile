@@ -33,8 +33,8 @@ RUN apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/lib/rstudio-server/r-versions
 
-  COPY sssd.conf /etc/sssd/sssd.conf
-  COPY logging.conf /etc/rstudio/logging.conf
+COPY build/sssd.conf /etc/sssd/sssd.conf
+COPY build/logging.conf /etc/rstudio/logging.conf
   
 # Set default env values
 ENV RSW_LICENSE=""
