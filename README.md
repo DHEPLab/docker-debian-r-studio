@@ -5,7 +5,7 @@
 + Task file
 + Docker
 
-## Getting Started
+## Building Container
 
 1. Build container
 
