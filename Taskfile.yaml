@@ -7,7 +7,7 @@ tasks:
     silent: true
   build:
     cmds:
-      - docker build --tag rstudio-server ./build
+      - docker build --tag rstudio-server --platform linux/amd64 -f build/Dockerfile .
     silent: true
   up:
     cmds:
