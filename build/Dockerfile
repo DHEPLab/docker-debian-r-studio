@@ -74,7 +74,6 @@ COPY build/requirements.txt /tmp/requirements.txt
 RUN R -e "requiRements::install(path_to_requirements = '/tmp/requirements.txt')" \
   && rm -rf /tmp/requirements.txt
 
-  USER rstudio
+USER rstudio
 
-  CMD ["rstudio-server","start"]
-  
+CMD ["rstudio-server","start"]
