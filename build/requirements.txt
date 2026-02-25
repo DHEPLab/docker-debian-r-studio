@@ -14,6 +14,7 @@ ggrepel
 glmnet
 haven
 inspectdf
+ISLR2
 kableExtra
 knitr
 lmtest
