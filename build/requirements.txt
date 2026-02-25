@@ -11,6 +11,7 @@ epir
 GGally
 ggplot2
 ggrepel
+glmnet
 haven
 inspectdf
 kableExtra
@@ -22,6 +23,7 @@ MASS
 MatchIt
 Matrix
 pander
+quarto
 rmarkdown
 sandwich
 SmartEDA

@@ -1,5 +1,7 @@
 FROM debian:13.3
 
+ARG QUARTO_VERSION=1.8.27
+
 # OCI Labels to link container to repository
 LABEL org.opencontainers.image.source="https://github.com/DHEPLab/docker-debian-r-studio"
 LABEL org.opencontainers.image.description="R development container"
@@ -26,7 +28,10 @@ RUN apt-get update \
       wget \
   && wget https://s3.amazonaws.com/rstudio-ide-build/server/jammy/amd64/rstudio-server-2026.02.0-daily-95-amd64.deb \
   && gdebi -n rstudio-server-2026.02.0-daily-95-amd64.deb \
-  && rm -rf rstudio-server-2026.02.0-daily-95-amd64.deb
+  && rm -rf rstudio-server-2026.02.0-daily-95-amd64.deb \
+  && wget https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb && \
+    apt install ./quarto-${QUARTO_VERSION}-linux-amd64.deb && \
+    rm -rf quarto-${QUARTO_VERSION}-linux-amd64.deb
  
 # Clean Up apt-get cache
 RUN apt-get clean \
